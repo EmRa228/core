@@ -307,7 +307,7 @@ class Security
 			return static::$csrf_token;
 		}
 
-		static::set_token(true);
+		static::set_token(\Config::get('security.csrf_rotate', true));
 
 		return static::$csrf_token;
 	}
